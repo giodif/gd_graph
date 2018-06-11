@@ -1,11 +1,16 @@
 {
-  "name": "graph.js",
+  "name": "gd_graph",
   "version": "1.0.0",
   "description": "simple graph library",
   "main": "",
-  "scripts": {},
+  "scripts": {
+    "build_es5": "babel ./gd_graph.js -o ./es5/gd_graph.js"
+  },
   "author": "",
   "license": "ISC",
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
+  },
   "dependencies": {}
 }

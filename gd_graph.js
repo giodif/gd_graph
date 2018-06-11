@@ -37,10 +37,10 @@ export default function graph(){
     const has = id => iss( id ) ? ids().indexOf( id ) > -1 : false
     // get node by id
     // ARRAY
-    const get = id => _n()[ id ]().slice()
+    const get = id => has(id) ? _n()[ id ]().slice() : null
     // how many connections for this node?
     // INTEGER
-    const degree = id => node( id ).length
+    const degree = id => get( id ).length
     // add a node
     // STRING
     const add = () => {
@@ -89,5 +89,6 @@ export default function graph(){
     // connect two nodes in both directions
     // ARRAY
     const connectFull = (id1, id2) => [connect(id1, id2), connect(id2, id1) ]
+    const severFull = (id1, id2) => [sever(id1, id2), sever(id2, id1)]
     return { nodes, ids, connected, has, get, degree, remove, add, connect, sever, connectFull };
 }
