@@ -47,7 +47,7 @@ gd_graph is a simple tool for managing a directed graph and includes some nice f
     g.remove( id4 );
     
     // junk for comparison
-    const id4 = "hhdhd9797"
+    id4 = "hhdhd9797"
 ```
 
 ![directional connections](img/two.jpg)
