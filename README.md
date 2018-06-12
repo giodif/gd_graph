@@ -27,11 +27,13 @@ gd_graph is a simple tool for managing a directed graph and includes some nice f
 
 ## Use
 
-![unconnected graph](img/one.jpg)
-
 ```
     const g = graph()
-    
+```
+
+![unconnected graph](img/one.jpg)
+
+``` 
     // add nodes to the graph
     // they start out disconnected
     // returns id's for the nodes
