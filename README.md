@@ -55,9 +55,6 @@ Remove a node from the graph.
     // removes the node and all of its connections
     // cleans up connections from other nodes as well
     g.remove( id4 );
-    
-    // junk for comparison
-    id4 = "hhdhd9797"
 ```
 
 ![directional connections](img/two.jpg)
