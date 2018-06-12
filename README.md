@@ -26,9 +26,11 @@ gd_graph is a simple tool for managing a directed graph and includes some nice f
 ```
 
 ## Use
-    const g = graph()
 
-    ![unconnected graph](img/one.jpg)
+![unconnected graph](img/one.jpg)
+
+```
+    const g = graph()
     
     // add nodes to the graph
     // they start out disconnected
@@ -44,17 +46,21 @@ gd_graph is a simple tool for managing a directed graph and includes some nice f
     
     // junk for comparison
     const id4 = "hhdhd9797"
+```
 
-    ![directional connections](img/two.jpg)
+![directional connections](img/two.jpg)
 
+```
     // connect directional edge between nodes
     // returns true/false for connection success
     g.connect( id1, id2 ) //true
     g.connect( id1, id3 ) //true
     g.connect( id1, id4 ) //false
+```
 
-    ![bidirectional connections](img/three.jpg)
+![bidirectional connections](img/three.jpg)
 
+```
     // bidirectionally connect nodes
     g.connectFull(id2, id3) //[true, true]
     g.connectFull(id1, id2) //[false, true]
