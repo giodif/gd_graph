@@ -27,11 +27,15 @@ gd_graph is a simple tool for managing a directed graph and includes some nice f
 
 ## Use
 
+Create a graph.
+
 ```
     const g = graph()
 ```
 
 ![unconnected graph](img/one.jpg)
+
+Add nodes to the graph.
 
 ``` 
     // add nodes to the graph
@@ -41,7 +45,13 @@ gd_graph is a simple tool for managing a directed graph and includes some nice f
     const id2 = g.add()
     const id3 = g.add()
     const id4 = g.add()
+```
 
+![unconnected graph](img/one-a.jpg)
+
+Remove a node from the graph.
+
+```
     // removes the node and all of its connections
     // cleans up connections from other nodes as well
     g.remove( id4 );
@@ -52,6 +62,8 @@ gd_graph is a simple tool for managing a directed graph and includes some nice f
 
 ![directional connections](img/two.jpg)
 
+Add directional edges between graph nodes.
+
 ```
     // connect directional edge between nodes
     // returns true/false for connection success
@@ -61,6 +73,8 @@ gd_graph is a simple tool for managing a directed graph and includes some nice f
 ```
 
 ![bidirectional connections](img/three.jpg)
+
+Add bidirectional edges between graph nodes. This will only connect unconnected edges.
 
 ```
     // bidirectionally connect nodes
