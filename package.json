@@ -1,10 +1,9 @@
 {
   "name": "gd_graph",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "simple graph library",
   "author": "Giovanni DiFeterici <gdifeterici@gmail.com>",
   "license": "ISC",
-
   "main": "./gd_graph.js",
   "scripts": {
     "build": "babel ./gd_graph.js -o ./gd_graph.es5.js",
