@@ -85,7 +85,7 @@ function graph() {
     var remove = function remove(id) {
         var n = _n();
         ids().forEach(function (idx) {
-            return disconnect(idx, id);
+            return sever(idx, id);
         });
         delete n[id];
         _n = function _n() {
@@ -133,8 +133,23 @@ function graph() {
     var connectFull = function connectFull(id1, id2) {
         return [connect(id1, id2), connect(id2, id1)];
     };
+    // disconnect two nodes in both directions
+    // ARRAY
     var severFull = function severFull(id1, id2) {
         return [sever(id1, id2), sever(id2, id1)];
     };
-    return { nodes: nodes, ids: ids, connected: connected, has: has, get: get, degree: degree, remove: remove, add: add, connect: connect, sever: sever, connectFull: connectFull };
+    return {
+        nodes: nodes,
+        ids: ids,
+        connected: connected,
+        has: has,
+        get: get,
+        degree: degree,
+        remove: remove,
+        add: add,
+        connect: connect,
+        sever: sever,
+        connectFull: connectFull,
+        severFull: severFull
+    };
 }

@@ -54,7 +54,7 @@ export default function graph(){
     // STRING
     const remove = id => {
         const n = _n()
-        ids().forEach( idx => disconnect( idx, id ))
+        ids().forEach( idx => sever( idx, id ))
         delete n[ id ]
         _n = () => n
         return id
@@ -89,6 +89,21 @@ export default function graph(){
     // connect two nodes in both directions
     // ARRAY
     const connectFull = (id1, id2) => [connect(id1, id2), connect(id2, id1) ]
+    // disconnect two nodes in both directions
+    // ARRAY
     const severFull = (id1, id2) => [sever(id1, id2), sever(id2, id1)]
-    return { nodes, ids, connected, has, get, degree, remove, add, connect, sever, connectFull };
+    return {
+        nodes,
+        ids,
+        connected,
+        has,
+        get,
+        degree,
+        remove,
+        add,
+        connect,
+        sever,
+        connectFull,
+        severFull
+    };
 }
