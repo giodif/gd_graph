@@ -1,5 +1,13 @@
 # GD Graph
 
+gd_graph is a simple tool for managing a directed graph and includes some nice features that help to manage the data:
+
+1. The data store is immutable and functional so side effects aren't a problem.
+2. The interface is entirely functional and has some useful introspection tools like 'has()', 'connected()', 'degree()'
+3. Generates and manages unique ids for all nodes across multiple graphs. Create as many graphs as you'd like and it won't create possible node id conflicts.
+4. No dependencies. This is intended to be simple and generic with minimal assumption about how it will be used. Possible uses are: scene graphs, games, logic models, data visualization, etc. gd_graph is intended to simplify some of the underlying logic associated with that type of data architecture.
+5. Small and lightweight.
+
 ## Install
 ```
     npm install --save gd_graph
@@ -13,14 +21,14 @@
 ##  Importing
 ```
     import graph from "gd_graph" // ES6
-
     // or
-
     var graph = require("../gd_graph.es5").default; // ES5
 ```
 
 ## Use
     const g = graph()
+
+    ![unconnected graph](img/one.jpg)
     
     // add nodes to the graph
     // they start out disconnected
@@ -37,11 +45,15 @@
     // junk for comparison
     const id4 = "hhdhd9797"
 
+    ![directional connections](img/two.jpg)
+
     // connect directional edge between nodes
     // returns true/false for connection success
     g.connect( id1, id2 ) //true
     g.connect( id1, id3 ) //true
     g.connect( id1, id4 ) //false
+
+    ![bidirectional connections](img/three.jpg)
 
     // bidirectionally connect nodes
     g.connectFull(id2, id3) //[true, true]
