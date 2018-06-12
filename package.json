@@ -4,15 +4,12 @@
   "description": "simple graph library",
   "author": "Giovanni DiFeterici <gdifeterici@gmail.com>",
   "license": "ISC",
-  "main": "./gd_graph.js",
+  "main": "gd_graph.js",
   "scripts": {
     "build": "babel ./gd_graph.js -o ./gd_graph.es5.js",
     "test": "mocha",
     "prepublish": "npm run build && npm test"
   },
-  "files": [
-    "./gd_graph.es5.js"
-  ],
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
