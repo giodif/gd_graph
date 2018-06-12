@@ -7,7 +7,7 @@
     "build": "babel ./gd_graph.js -o ./gd_graph.es5.js",
     "test": "mocha"
   },
-  "author": "",
+  "author": "Giovanni DiFeterici <gdifeterici@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.26.0",
