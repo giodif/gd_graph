@@ -21,26 +21,26 @@ export default function graph(){
     const uid = () => "n" + _uids++
     // get all node ids
     // ARRAY
-    const ids = () => Object.keys( _n() )
+    const ids = () => Object.keys(_n())
     // get all nodes
     // OBJECT
     const nodes = () => {
         const c = {}
-        ids().forEach( k => { c[ k ] = get( k ) })
-        return c;
+        ids().forEach( k => {c[k] = get(k)})
+        return c
     }
     // is n1 -> n2? (doesn't check the other way i.e. n2 -> n1)
     // BOOLEAN
-    const connected = (id1, id2) => has(id1) && has(id2) && get(id1).indexOf( id2 ) >= 0
+    const connected = (id1, id2) => has(id1) && has(id2) && get(id1).indexOf(id2) >= 0
     // does the node list contain this key?
     // BOOLEAN
-    const has = id => iss( id ) ? ids().indexOf( id ) > -1 : false
+    const has = id => iss(id) ? ids().indexOf(id) > -1 : false
     // get node by id
     // ARRAY
-    const get = id => has(id) ? _n()[ id ]().slice() : null
+    const get = id => has(id) ? _n()[id]().slice() : null
     // how many connections for this node?
     // INTEGER
-    const degree = id => get( id ).length
+    const degree = id => get(id).length
     // add a node
     // STRING
     const add = () => {
@@ -54,19 +54,19 @@ export default function graph(){
     // STRING
     const remove = id => {
         const n = _n()
-        ids().forEach( idx => sever( idx, id ))
-        delete n[ id ]
+        ids().forEach( idx => sever(idx, id))
+        delete n[id]
         _n = () => n
         return id
     }
     // connect two nodes
     // BOOLEAN
     const connect = (id1, id2) => {
-        if( !connected(id1, id2) ){
+        if(!connected(id1, id2)){
             const n = _n()
             const c = get(id1)
             c.push(id2)
-            n[ id1 ] = () => c
+            n[id1] = () => c
             _n = () => n
             return true;
         }
@@ -78,9 +78,9 @@ export default function graph(){
         if( connected(id1, id2) ){
             const n = _n()
             const c = get(id1)
-            const idx = c.indexOf( id2 )
-            c.splice( idx, 1 )
-            n[ id1 ] = () => c
+            const idx = c.indexOf(id2)
+            c.splice(idx, 1)
+            n[id1] = () => c
             _n = () => n
             return true
         }
@@ -88,7 +88,7 @@ export default function graph(){
     }
     // connect two nodes in both directions
     // ARRAY
-    const connectFull = (id1, id2) => [connect(id1, id2), connect(id2, id1) ]
+    const connectFull = (id1, id2) => [connect(id1, id2), connect(id2, id1)]
     // disconnect two nodes in both directions
     // ARRAY
     const severFull = (id1, id2) => [sever(id1, id2), sever(id2, id1)]
@@ -105,5 +105,5 @@ export default function graph(){
         sever,
         connectFull,
         severFull
-    };
+    }
 }
