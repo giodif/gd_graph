@@ -1,6 +1,6 @@
 {
   "name": "gd_graph",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "simple graph library",
   "author": "Giovanni DiFeterici <gdifeterici@gmail.com>",
   "license": "ISC",
